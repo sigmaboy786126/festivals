@@ -1,25 +1,29 @@
 from flask import Flask, jsonify, request
 import json
+import os
 from datetime import datetime
 from functools import wraps
 
 app = Flask(__name__)
 
+# Base directory for JSON
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+JSON_FILE = os.path.join(BASE_DIR, 'festivals.json')
+
 # Load the JSON data
 def load_festival_data():
     try:
-        with open('deepseek_json_20250913_acba16.json', 'r', encoding='utf-8') as file:
+        with open(JSON_FILE, 'r', encoding='utf-8') as file:
             return json.load(file)
     except FileNotFoundError:
         return {"error": "Data file not found"}
     except json.JSONDecodeError:
         return {"error": "Invalid JSON format"}
 
-# CORS decorator (if needed)
+# CORS decorator
 def cors(f):
     @wraps(f)
     def decorated_function(*args, **kwargs):
-        # Add CORS headers
         response = f(*args, **kwargs)
         response.headers.add('Access-Control-Allow-Origin', '*')
         response.headers.add('Access-Control-Allow-Headers', 'Content-Type')
@@ -51,7 +55,6 @@ def get_all_festivals():
     data = load_festival_data()
     if "error" in data:
         return jsonify(data), 500
-    
     return jsonify(data["festivals"])
 
 @app.route('/festivals/<name>')
@@ -60,9 +63,7 @@ def get_festival_by_name(name):
     data = load_festival_data()
     if "error" in data:
         return jsonify(data), 500
-    
     festival = next((f for f in data["festivals"] if f["name"].lower() == name.lower()), None)
-    
     if festival:
         return jsonify(festival)
     else:
@@ -74,13 +75,10 @@ def get_festivals_by_date(date):
     data = load_festival_data()
     if "error" in data:
         return jsonify(data), 500
-    
     try:
-        # Validate date format
         datetime.strptime(date, '%Y-%m-%d')
     except ValueError:
         return jsonify({"error": "Invalid date format. Use YYYY-MM-DD"}), 400
-    
     festivals = [f for f in data["festivals"] if f["date"] == date]
     return jsonify(festivals)
 
@@ -89,11 +87,9 @@ def get_festivals_by_date(date):
 def get_festivals_by_month(month):
     if month < 1 or month > 12:
         return jsonify({"error": "Month must be between 1 and 12"}), 400
-    
     data = load_festival_data()
     if "error" in data:
         return jsonify(data), 500
-    
     festivals = [f for f in data["festivals"] if int(f["date"].split('-')[1]) == month]
     return jsonify(festivals)
 
@@ -103,7 +99,6 @@ def get_festivals_by_region(region):
     data = load_festival_data()
     if "error" in data:
         return jsonify(data), 500
-    
     festivals = [f for f in data["festivals"] if region.lower() in [r.lower() for r in f["regions"]]]
     return jsonify(festivals)
 
@@ -113,7 +108,6 @@ def get_festivals_by_type(festival_type):
     data = load_festival_data()
     if "error" in data:
         return jsonify(data), 500
-    
     festivals = [f for f in data["festivals"] if f["type"].lower() == festival_type.lower()]
     return jsonify(festivals)
 
@@ -123,8 +117,7 @@ def get_public_holidays():
     data = load_festival_data()
     if "error" in data:
         return jsonify(data), 500
-    
-    public_holidays = [f for f in data["festivals"] if f["public_holiday"]]
+    public_holidays = [f for f in data["festivals"] if f.get("public_holiday", False)]
     return jsonify(public_holidays)
 
 @app.route('/regional-events')
@@ -133,7 +126,6 @@ def get_regional_events():
     data = load_festival_data()
     if "error" in data:
         return jsonify(data), 500
-    
     return jsonify(data["regional_events"])
 
 @app.route('/metadata')
@@ -142,7 +134,6 @@ def get_metadata():
     data = load_festival_data()
     if "error" in data:
         return jsonify(data), 500
-    
     return jsonify(data["metadata"])
 
 if __name__ == '__main__':
