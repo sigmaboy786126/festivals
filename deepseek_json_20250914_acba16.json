@@ -1,0 +1,375 @@
+{
+  "metadata": {
+    "title": "Indian Festival & Event Calendar Database",
+    "description": "A comprehensive collection of festivals, holidays and cultural events across India",
+    "country": "India",
+    "year": 2024,
+    "last_updated": "2024-01-15",
+    "source": "Compiled from various cultural and government sources",
+    "note": "Dates for lunar-based festivals may vary slightly by region and annual calculations"
+  },
+  "festivals": [
+    {
+      "name": "New Year's Day",
+      "type": "International Holiday",
+      "description": "Celebration of the new year",
+      "date": "2024-01-01",
+      "regions": ["All India"],
+      "public_holiday": true
+    },
+    {
+      "name": "Lohri",
+      "type": "Harvest Festival",
+      "description": "Punjabi festival marking the end of winter",
+      "date": "2024-01-13",
+      "regions": ["Punjab", "Haryana", "Delhi", "Himachal Pradesh"],
+      "public_holiday": true
+    },
+    {
+      "name": "Makar Sankranti",
+      "type": "Harvest Festival",
+      "description": "Festival marking the transition of the Sun into Makara rashi (Capricorn)",
+      "date": "2024-01-15",
+      "regions": ["Andhra Pradesh", "Telangana", "Karnataka", "Maharashtra", "Gujarat", "Rajasthan", "Uttar Pradesh", "Bihar", "West Bengal"],
+      "public_holiday": true
+    },
+    {
+      "name": "Pongal",
+      "type": "Harvest Festival",
+      "description": "Four-day harvest festival celebrated in Tamil Nadu",
+      "date": "2024-01-15",
+      "regions": ["Tamil Nadu", "Puducherry"],
+      "public_holiday": true
+    },
+    {
+      "name": "Republic Day",
+      "type": "National Holiday",
+      "description": "Celebration of the adoption of the Indian Constitution",
+      "date": "2024-01-26",
+      "regions": ["All India"],
+      "public_holiday": true
+    },
+    {
+      "name": "Vasant Panchami",
+      "type": "Religious Festival",
+      "description": "Festival dedicated to Saraswati, the goddess of knowledge, music and arts",
+      "date": "2024-02-14",
+      "regions": ["North India", "West India", "East India"],
+      "public_holiday": false
+    },
+    {
+      "name": "Maha Shivaratri",
+      "type": "Religious Festival",
+      "description": "Great night of Shiva, dedicated to Lord Shiva",
+      "date": "2024-03-08",
+      "regions": ["All India"],
+      "public_holiday": true
+    },
+    {
+      "name": "Chapchar Kut",
+      "type": "Cultural Festival",
+      "description": "Spring festival of Mizoram celebrating bamboo harvest",
+      "date": "2024-03-01",
+      "regions": ["Mizoram"],
+      "public_holiday": true
+    },
+    {
+      "name": "Holi",
+      "type": "Religious Festival",
+      "description": "Festival of colors, celebrating the victory of good over evil",
+      "date": "2024-03-25",
+      "regions": ["North India", "West India", "East India"],
+      "public_holiday": true
+    },
+    {
+      "name": "Good Friday",
+      "type": "Religious Holiday",
+      "description": "Christian holiday commemorating the crucifixion of Jesus",
+      "date": "2024-03-29",
+      "regions": ["All India"],
+      "public_holiday": true
+    },
+    {
+      "name": "Easter Sunday",
+      "type": "Religious Holiday",
+      "description": "Christian holiday celebrating the resurrection of Jesus",
+      "date": "2024-03-31",
+      "regions": ["All India"],
+      "public_holiday": false
+    },
+    {
+      "name": "Ugadi",
+      "type": "New Year Festival",
+      "description": "Telugu and Kannada New Year",
+      "date": "2024-04-09",
+      "regions": ["Andhra Pradesh", "Telangana", "Karnataka"],
+      "public_holiday": true
+    },
+    {
+      "name": "Gudi Padwa",
+      "type": "New Year Festival",
+      "description": "Marathi and Konkani New Year",
+      "date": "2024-04-09",
+      "regions": ["Maharashtra", "Goa"],
+      "public_holiday": true
+    },
+    {
+      "name": "Vishu",
+      "type": "New Year Festival",
+      "description": "Malayali New Year festival",
+      "date": "2024-04-14",
+      "regions": ["Kerala"],
+      "public_holiday": true
+    },
+    {
+      "name": "Baisakhi / Vaisakhi",
+      "type": "Harvest Festival",
+      "description": "Sikh New Year and harvest festival",
+      "date": "2024-04-13",
+      "regions": ["Punjab", "Haryana"],
+      "public_holiday": true
+    },
+    {
+      "name": "Ram Navami",
+      "type": "Religious Festival",
+      "description": "Birthday of Lord Rama",
+      "date": "2024-04-17",
+      "regions": ["All India"],
+      "public_holiday": true
+    },
+    {
+      "name": "Mahavir Jayanti",
+      "type": "Religious Festival",
+      "description": "Birth anniversary of Lord Mahavira, the 24th Tirthankara of Jainism",
+      "date": "2024-04-21",
+      "regions": ["All India"],
+      "public_holiday": true
+    },
+    {
+      "name": "Eid al-Fitr",
+      "type": "Religious Festival",
+      "description": "Celebration marking the end of Ramadan",
+      "date": "2024-04-11",
+      "regions": ["All India"],
+      "public_holiday": true
+    },
+    {
+      "name": "Maharashtra Day",
+      "type": "Regional Holiday",
+      "description": "Formation of Maharashtra state",
+      "date": "2024-05-01",
+      "regions": ["Maharashtra"],
+      "public_holiday": true
+    },
+    {
+      "name": "Buddha Purnima",
+      "type": "Religious Festival",
+      "description": "Birth, enlightenment and death of Gautama Buddha",
+      "date": "2024-05-23",
+      "regions": ["All India"],
+      "public_holiday": true
+    },
+    {
+      "name": "Eid al-Adha",
+      "type": "Religious Festival",
+      "description": "Festival of Sacrifice",
+      "date": "2024-06-17",
+      "regions": ["All India"],
+      "public_holiday": true
+    },
+    {
+      "name": "Rath Yatra",
+      "type": "Religious Festival",
+      "description": "Chariot festival of Lord Jagannath",
+      "date": "2024-07-07",
+      "regions": ["Odisha", "West Bengal", "Jharkhand"],
+      "public_holiday": true
+    },
+    {
+      "name": "Bonalu",
+      "type": "Religious Festival",
+      "description": "Telangana festival dedicated to Goddess Mahakali",
+      "date": "2024-07-21",
+      "regions": ["Telangana", "Andhra Pradesh"],
+      "public_holiday": true
+    },
+    {
+      "name": "Kharchi Puja",
+      "type": "Religious Festival",
+      "description": "Royal worship of fourteen deities in Tripura",
+      "date": "2024-07-15",
+      "regions": ["Tripura"],
+      "public_holiday": true
+    },
+    {
+      "name": "Muharram (Ashura)",
+      "type": "Religious Festival",
+      "description": "Islamic day of mourning for the martyrdom of Imam Hussain",
+      "date": "2024-07-17",
+      "regions": ["All India"],
+      "public_holiday": true
+    },
+    {
+      "name": "Independence Day",
+      "type": "National Holiday",
+      "description": "Celebration of India's independence from British rule",
+      "date": "2024-08-15",
+      "regions": ["All India"],
+      "public_holiday": true
+    },
+    {
+      "name": "Raksha Bandhan",
+      "type": "Cultural Festival",
+      "description": "Celebration of the bond between brothers and sisters",
+      "date": "2024-08-19",
+      "regions": ["North India", "West India", "Central India"],
+      "public_holiday": false
+    },
+    {
+      "name": "Pateti (Parsi New Year)",
+      "type": "New Year Festival",
+      "description": "Parsi New Year and day of repentance",
+      "date": "2024-08-16",
+      "regions": ["Maharashtra", "Gujarat"],
+      "public_holiday": true
+    },
+    {
+      "name": "Janmashtami",
+      "type": "Religious Festival",
+      "description": "Birthday of Lord Krishna",
+      "date": "2024-08-26",
+      "regions": ["All India"],
+      "public_holiday": true
+    },
+    {
+      "name": "Ganesh Chaturthi",
+      "type": "Religious Festival",
+      "description": "Festival celebrating the birth of Lord Ganesha",
+      "date": "2024-09-07",
+      "regions": ["Maharashtra", "Goa", "Karnataka", "Andhra Pradesh", "Telangana"],
+      "public_holiday": true
+    },
+    {
+      "name": "Onam",
+      "type": "Harvest Festival",
+      "description": "Harvest festival of Kerala",
+      "date": "2024-09-15",
+      "regions": ["Kerala"],
+      "public_holiday": true
+    },
+    {
+      "name": "Bathukamma",
+      "type": "Cultural Festival",
+      "description": "Floral festival of Telangana celebrating feminine energy",
+      "date": "2024-10-05",
+      "regions": ["Telangana"],
+      "public_holiday": true
+    },
+    {
+      "name": "Navratri",
+      "type": "Religious Festival",
+      "description": "Nine-night festival dedicated to Goddess Durga",
+      "date": "2024-10-03",
+      "regions": ["All India"],
+      "public_holiday": false
+    },
+    {
+      "name": "Dussehra",
+      "type": "Religious Festival",
+      "description": "Celebration of the victory of good over evil",
+      "date": "2024-10-12",
+      "regions": ["All India"],
+      "public_holiday": true
+    },
+    {
+      "name": "Karwa Chauth",
+      "type": "Religious Festival",
+      "description": "Hindu festival where married women fast for the longevity of their husbands",
+      "date": "2024-10-20",
+      "regions": ["North India"],
+      "public_holiday": false
+    },
+    {
+      "name": "Diwali",
+      "type": "Religious Festival",
+      "description": "Festival of lights",
+      "date": "2024-10-31",
+      "regions": ["All India"],
+      "public_holiday": true
+    },
+    {
+      "name": "Chhath Puja",
+      "type": "Religious Festival",
+      "description": "Ancient Hindu festival dedicated to the Sun God",
+      "date": "2024-11-07",
+      "regions": ["Bihar", "Uttar Pradesh", "Jharkhand"],
+      "public_holiday": true
+    },
+    {
+      "name": "Guru Nanak Jayanti",
+      "type": "Religious Festival",
+      "description": "Birthday of Guru Nanak Dev, founder of Sikhism",
+      "date": "2024-11-15",
+      "regions": ["Punjab", "Haryana", "Delhi", "Himachal Pradesh"],
+      "public_holiday": true
+    },
+    {
+      "name": "Eid-e-Milad-un-Nabi (Mawlid)",
+      "type": "Religious Festival",
+      "description": "Birthday of the Islamic prophet Muhammad",
+      "date": "2024-09-16",
+      "regions": ["All India"],
+      "public_holiday": true
+    },
+    {
+      "name": "Christmas",
+      "type": "Religious Holiday",
+      "description": "Celebration of the birth of Jesus Christ",
+      "date": "2024-12-25",
+      "regions": ["All India"],
+      "public_holiday": true
+    }
+  ],
+  "regional_events": [
+    {
+      "name": "Kumbh Mela",
+      "type": "Religious Gathering",
+      "description": "Mass Hindu pilgrimage of faith",
+      "frequency": "Every 12 years",
+      "next_occurrence": "2025",
+      "regions": ["Uttar Pradesh", "Madhya Pradesh", "Maharashtra"]
+    },
+    {
+      "name": "Hornbill Festival",
+      "type": "Cultural Festival",
+      "description": "Celebration of Naga culture",
+      "date": "2024-12-01",
+      "duration_days": 10,
+      "regions": ["Nagaland"]
+    },
+    {
+      "name": "Surajkund International Craft Mela",
+      "type": "Cultural Fair",
+      "description": "International crafts fair",
+      "date": "2024-02-02",
+      "duration_days": 15,
+      "regions": ["Haryana"]
+    },
+    {
+      "name": "Goa Carnival",
+      "type": "Cultural Festival",
+      "description": "Pre-Lenten festival celebrated in Goa",
+      "date": "2024-02-10",
+      "duration_days": 4,
+      "regions": ["Goa"]
+    },
+    {
+      "name": "Thrissur Pooram",
+      "type": "Cultural Festival",
+      "description": "Most spectacular temple festival in Kerala",
+      "date": "2024-05-10",
+      "duration_days": 3,
+      "regions": ["Kerala"]
+    }
+  ]
+}
