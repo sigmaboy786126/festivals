@@ -1,24 +1,8 @@
-from flask import Flask, jsonify, request
-import json
+from flask import Flask, jsonify
 import os
-from datetime import datetime
 from functools import wraps
 
 app = Flask(__name__)
-
-# Base directory for JSON
-BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-JSON_FILE = os.path.join(BASE_DIR, 'festivals.json')
-
-# Load the JSON data
-def load_festival_data():
-    try:
-        with open(JSON_FILE, 'r', encoding='utf-8') as file:
-            return json.load(file)
-    except FileNotFoundError:
-        return {"error": "Data file not found"}
-    except json.JSONDecodeError:
-        return {"error": "Invalid JSON format"}
 
 # CORS decorator
 def cors(f):
@@ -35,106 +19,28 @@ def cors(f):
 @cors
 def home():
     return jsonify({
-        "message": "Indian Festival & Event Calendar API",
-        "endpoints": {
-            "/festivals": "Get all festivals",
-            "/festivals/<name>": "Get festival by name",
-            "/festivals/date/<date>": "Get festivals on a specific date (YYYY-MM-DD)",
-            "/festivals/month/<month>": "Get festivals in a specific month (1-12)",
-            "/festivals/region/<region>": "Get festivals by region",
-            "/festivals/type/<type>": "Get festivals by type",
-            "/festivals/public": "Get all public holidays",
-            "/regional-events": "Get all regional events",
-            "/metadata": "Get metadata about the dataset"
-        }
+        "message": "Indian Festival API - Test Endpoint",
+        "status": "Working"
     })
 
-@app.route('/festivals')
+@app.route('/test')
 @cors
-def get_all_festivals():
-    data = load_festival_data()
-    if "error" in data:
-        return jsonify(data), 500
-    return jsonify(data["festivals"])
+def test():
+    return jsonify({"message": "Test endpoint is working"})
 
-@app.route('/festivals/<name>')
+@app.route('/festivals/sample')
 @cors
-def get_festival_by_name(name):
-    data = load_festival_data()
-    if "error" in data:
-        return jsonify(data), 500
-    festival = next((f for f in data["festivals"] if f["name"].lower() == name.lower()), None)
-    if festival:
-        return jsonify(festival)
-    else:
-        return jsonify({"error": "Festival not found"}), 404
-
-@app.route('/festivals/date/<date>')
-@cors
-def get_festivals_by_date(date):
-    data = load_festival_data()
-    if "error" in data:
-        return jsonify(data), 500
-    try:
-        datetime.strptime(date, '%Y-%m-%d')
-    except ValueError:
-        return jsonify({"error": "Invalid date format. Use YYYY-MM-DD"}), 400
-    festivals = [f for f in data["festivals"] if f["date"] == date]
-    return jsonify(festivals)
-
-@app.route('/festivals/month/<int:month>')
-@cors
-def get_festivals_by_month(month):
-    if month < 1 or month > 12:
-        return jsonify({"error": "Month must be between 1 and 12"}), 400
-    data = load_festival_data()
-    if "error" in data:
-        return jsonify(data), 500
-    festivals = [f for f in data["festivals"] if int(f["date"].split('-')[1]) == month]
-    return jsonify(festivals)
-
-@app.route('/festivals/region/<region>')
-@cors
-def get_festivals_by_region(region):
-    data = load_festival_data()
-    if "error" in data:
-        return jsonify(data), 500
-    festivals = [f for f in data["festivals"] if region.lower() in [r.lower() for r in f["regions"]]]
-    return jsonify(festivals)
-
-@app.route('/festivals/type/<festival_type>')
-@cors
-def get_festivals_by_type(festival_type):
-    data = load_festival_data()
-    if "error" in data:
-        return jsonify(data), 500
-    festivals = [f for f in data["festivals"] if f["type"].lower() == festival_type.lower()]
-    return jsonify(festivals)
-
-@app.route('/festivals/public')
-@cors
-def get_public_holidays():
-    data = load_festival_data()
-    if "error" in data:
-        return jsonify(data), 500
-    public_holidays = [f for f in data["festivals"] if f.get("public_holiday", False)]
-    return jsonify(public_holidays)
-
-@app.route('/regional-events')
-@cors
-def get_regional_events():
-    data = load_festival_data()
-    if "error" in data:
-        return jsonify(data), 500
-    return jsonify(data["regional_events"])
-
-@app.route('/metadata')
-@cors
-def get_metadata():
-    data = load_festival_data()
-    if "error" in data:
-        return jsonify(data), 500
-    return jsonify(data["metadata"])
+def sample_festival():
+    # Return a hardcoded sample instead of reading from file
+    return jsonify([{
+        "name": "Diwali",
+        "type": "Religious Festival",
+        "description": "Festival of lights",
+        "date": "2024-10-31",
+        "regions": ["All India"],
+        "public_holiday": true
+    }])
 
 if __name__ == '__main__':
-    app.run(debug=True, port=5000)
+    port = int(os.environ.get('PORT', 5000))
+    app.run(host='0.0.0.0', port=port)
